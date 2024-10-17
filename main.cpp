@@ -24,7 +24,7 @@ int main(int argc, char** argv){
 
 
   runManager->Initialize();
-  runManager->BeamOn(10000);
+  runManager->BeamOn(1000);
 
   //G4UIExecutive* ui = new G4UIExecutive(argc, argv);
   //G4VisManager* visManager = new G4VisExecutive;

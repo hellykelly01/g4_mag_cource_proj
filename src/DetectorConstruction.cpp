@@ -76,7 +76,7 @@ void DetectorConstruction::DefineMaterials(){
   fPMMA -> AddElement(nist->FindOrBuildElement("O", false), 2);
   fPMMA -> AddElement(nist->FindOrBuildElement("H", false), 8);
   std::vector<G4double> PMMA_RIND = { 1.51, 1.52, 1.53 };
-  std::vector<G4double> PMMA_ABSL = { 9.0 * m, 9.0 * m, 9 * m };
+  std::vector<G4double> PMMA_ABSL = { 9.0 * m, 9.0 * m, 9.0 * m };
   G4MaterialPropertiesTable* PMMA_mt = new G4MaterialPropertiesTable();
   PMMA_mt->AddProperty("RINDEX", photonEnergy, PMMA_RIND);
   PMMA_mt->AddProperty("ABSLENGTH", photonEnergy, PMMA_ABSL);
