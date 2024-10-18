@@ -24,22 +24,21 @@ int main(int argc, char** argv){
 
 
   runManager->Initialize();
-  runManager->BeamOn(1000);
+  //runManager->BeamOn(1000);
 
-  //G4UIExecutive* ui = new G4UIExecutive(argc, argv);
-  //G4VisManager* visManager = new G4VisExecutive;
-  //visManager->Initialize();
-
-  //G4UImanager* UImanager = G4UImanager::GetUIpointer();
-  //UImanager->ApplyCommand("/run/bemOn 10000");
-  //UImanager->ApplyCommand("/vis/open OGL");
-  //UImanager->ApplyCommand("/vis/drawVolume");
-  //UImanager->ApplyCommand("/vis/viewer/set/autoRefresh true");
-  //UImanager->ApplyCommand("/vis/scene/add/trajectories smooth");
-  //ui->SessionStart();
+  G4UIExecutive* ui = new G4UIExecutive(argc, argv);
+  G4VisManager* visManager = new G4VisExecutive;
+  visManager->Initialize();
+  G4UImanager* UImanager = G4UImanager::GetUIpointer();
+  UImanager->ApplyCommand("/run/bemOn 10000");
+  UImanager->ApplyCommand("/vis/open OGL");
+  UImanager->ApplyCommand("/vis/drawVolume");
+  UImanager->ApplyCommand("/vis/viewer/set/autoRefresh true");
+  UImanager->ApplyCommand("/vis/scene/add/trajectories smooth");
+  ui->SessionStart();
 
   delete runManager;
-  //delete visManager;
+  delete visManager;
 
   return 0;
 }
